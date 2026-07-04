@@ -9,7 +9,7 @@
     <version>0.1.0-SNAPSHOT</version>
     <name>Caedral Java SDK</name>
     <description>Official Java client for the Caedral API</description>
-    <url>https://github.com/caedral/caedral-java</url>
+    <url>https://github.com/trycaedral/caedral-java</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
