@@ -140,9 +140,10 @@ class IntegrationTest {
         UsageSummary usage = client.usage().get();
 
         assertNotNull(usage.getAccountStatus());
-        assertNotNull(usage.getPlan());
-        assertNotNull(usage.getPlanStatus());
-        assertTrue(usage.getWeeklyPool().getLimit() >= 0);
+        assertTrue(usage.getBalanceCents() >= 0);
+        if (usage.getWeeklyPool() != null) {
+            assertTrue(usage.getWeeklyPool().getLimit() >= 0);
+        }
     }
 
     @Test

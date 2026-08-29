@@ -6,6 +6,7 @@ public class UsageSummary {
     private String plan;
     private String planStatus;
     private int balanceCents;
+    private Integer balanceMilliCents;
     private WeeklyPool weeklyPool;
     private OverageSummary overage;
     private int balanceWeightedUnitsAffordable;
@@ -40,6 +41,14 @@ public class UsageSummary {
 
     public void setBalanceCents(int balanceCents) {
         this.balanceCents = balanceCents;
+    }
+
+    public Integer getBalanceMilliCents() {
+        return balanceMilliCents;
+    }
+
+    public void setBalanceMilliCents(Integer balanceMilliCents) {
+        this.balanceMilliCents = balanceMilliCents;
     }
 
     public WeeklyPool getWeeklyPool() {

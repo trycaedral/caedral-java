@@ -15,9 +15,7 @@ public final class UsageService {
     }
 
     /**
-     * Fetch a snapshot of the authenticated account's current billing
-     * state: plan, weekly free pool utilization, prepaid balance, and
-     * overage limits.
+     * Fetch prepaid account status and balance from {@code GET /v1/usage}.
      *
      * @return the current {@link UsageSummary} for the account
      * @throws com.caedral.sdk.exception.CaedralAPIException if the API
