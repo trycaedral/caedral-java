@@ -3,12 +3,9 @@ package com.caedral.sdk.model;
 public class UsageSummary {
 
     private String accountStatus;
-    private String plan;
-    private String planStatus;
-    private int balanceCents;
-    private WeeklyPool weeklyPool;
-    private OverageSummary overage;
-    private int balanceWeightedUnitsAffordable;
+    private UsagePlan plan;
+    private UsagePools pools;
+    private UsageOnDemand onDemand;
 
     public String getAccountStatus() {
         return accountStatus;
@@ -18,51 +15,27 @@ public class UsageSummary {
         this.accountStatus = accountStatus;
     }
 
-    public String getPlan() {
+    public UsagePlan getPlan() {
         return plan;
     }
 
-    public void setPlan(String plan) {
+    public void setPlan(UsagePlan plan) {
         this.plan = plan;
     }
 
-    public String getPlanStatus() {
-        return planStatus;
+    public UsagePools getPools() {
+        return pools;
     }
 
-    public void setPlanStatus(String planStatus) {
-        this.planStatus = planStatus;
+    public void setPools(UsagePools pools) {
+        this.pools = pools;
     }
 
-    public int getBalanceCents() {
-        return balanceCents;
+    public UsageOnDemand getOnDemand() {
+        return onDemand;
     }
 
-    public void setBalanceCents(int balanceCents) {
-        this.balanceCents = balanceCents;
-    }
-
-    public WeeklyPool getWeeklyPool() {
-        return weeklyPool;
-    }
-
-    public void setWeeklyPool(WeeklyPool weeklyPool) {
-        this.weeklyPool = weeklyPool;
-    }
-
-    public OverageSummary getOverage() {
-        return overage;
-    }
-
-    public void setOverage(OverageSummary overage) {
-        this.overage = overage;
-    }
-
-    public int getBalanceWeightedUnitsAffordable() {
-        return balanceWeightedUnitsAffordable;
-    }
-
-    public void setBalanceWeightedUnitsAffordable(int balanceWeightedUnitsAffordable) {
-        this.balanceWeightedUnitsAffordable = balanceWeightedUnitsAffordable;
+    public void setOnDemand(UsageOnDemand onDemand) {
+        this.onDemand = onDemand;
     }
 }
