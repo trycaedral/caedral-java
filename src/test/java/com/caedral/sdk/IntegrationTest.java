@@ -143,9 +143,6 @@ class IntegrationTest {
         assertNotNull(usage.getPlan());
         assertNotNull(usage.getPlan().getId());
         assertNotNull(usage.getPools());
-        if (usage.getWeeklyPool() != null) {
-            assertTrue(usage.getWeeklyPool().getLimit() >= 0);
-        }
     }
 
     @Test

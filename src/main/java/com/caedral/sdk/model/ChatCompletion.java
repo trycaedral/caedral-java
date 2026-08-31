@@ -12,6 +12,7 @@ public class ChatCompletion {
     private String model;
     private List<ChatCompletionChoice> choices;
     private CompletionUsage usage;
+    private NotrePublicMetadata notre;
 
     public String getId() {
         return id;
@@ -59,5 +60,13 @@ public class ChatCompletion {
 
     public void setUsage(CompletionUsage usage) {
         this.usage = usage;
+    }
+
+    public NotrePublicMetadata getNotre() {
+        return notre;
+    }
+
+    public void setNotre(NotrePublicMetadata notre) {
+        this.notre = notre;
     }
 }
