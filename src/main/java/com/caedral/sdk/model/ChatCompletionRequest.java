@@ -27,6 +27,7 @@ public class ChatCompletionRequest {
 
     private Object stop;
     private String user;
+    private NotreOptions notre;
 
     public ChatCompletionRequest() {
     }
@@ -114,5 +115,13 @@ public class ChatCompletionRequest {
 
     public void setUser(String user) {
         this.user = user;
+    }
+
+    public NotreOptions getNotre() {
+        return notre;
+    }
+
+    public void setNotre(NotreOptions notre) {
+        this.notre = notre;
     }
 }
