@@ -42,5 +42,25 @@ class NotreContractTest {
         assertEquals("auto", completion.getNotre().getMode());
         assertFalse(completion.getNotre().isIntervened());
         assertFalse(completion.getNotre().isFallbackUsed());
+        // V1 base shape: no economy fields.
+        assertNull(completion.getNotre().getInputSaved());
+        assertNull(completion.getNotre().getResult());
+    }
+
+    @Test
+    void responseTelemetryMetadataV2() throws Exception {
+        String raw = Files.readString(FIXTURES.resolve("notre-response-telemetry-v2.json"));
+        ChatCompletion completion = MAPPER.readValue(raw, ChatCompletion.class);
+        assertNotNull(completion.getNotre());
+        assertTrue(completion.getNotre().isEnabled());
+        assertTrue(completion.getNotre().isIntervened());
+        assertFalse(completion.getNotre().isFallbackUsed());
+        assertEquals(Integer.valueOf(1200), completion.getNotre().getInputBefore());
+        assertEquals(Integer.valueOf(310), completion.getNotre().getInputSent());
+        assertEquals(Integer.valueOf(890), completion.getNotre().getInputSaved());
+        assertEquals("optimized", completion.getNotre().getResult());
+        assertNotNull(completion.getNotre().getValueUsd());
+        assertTrue(completion.getNotre().getValueUsd() > 0.0026
+                && completion.getNotre().getValueUsd() < 0.0028);
     }
 }
