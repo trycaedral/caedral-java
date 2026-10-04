@@ -63,4 +63,20 @@ class NotreContractTest {
         assertTrue(completion.getNotre().getValueUsd() > 0.0026
                 && completion.getNotre().getValueUsd() < 0.0028);
     }
+
+    @Test
+    void responseTelemetryMetadataV3() throws Exception {
+        String raw = Files.readString(FIXTURES.resolve("notre-response-telemetry-v3.json"));
+        ChatCompletion completion = MAPPER.readValue(raw, ChatCompletion.class);
+        assertNotNull(completion.getNotre());
+        assertEquals("chat", completion.getNotre().getShape());
+        assertEquals(Integer.valueOf(3), completion.getNotre().getContractVersion());
+        assertNotNull(completion.getNotre().getSavedBreakdown());
+        assertEquals(640, ((Number) completion.getNotre().getSavedBreakdown().get("cache_hit_tokens")).intValue());
+        assertEquals(20, ((Number) completion.getNotre().getSavedBreakdown().get("dedup_tokens")).intValue());
+        assertEquals(0, ((Number) completion.getNotre().getSavedBreakdown().get("prefilter_tokens")).intValue());
+        assertEquals(Integer.valueOf(660), completion.getNotre().getInputSaved());
+        assertEquals(Integer.valueOf(900), completion.getNotre().getInputBefore());
+        assertEquals(Integer.valueOf(240), completion.getNotre().getInputSent());
+    }
 }
